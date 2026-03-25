@@ -2,26 +2,12 @@
 <html>
 <head>
     <title>PC Control</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #111; color: #eee; text-align: center; padding-top: 80px; }
-        button { padding: 15px 30px; font-size: 20px; border: none; border-radius: 8px; cursor: pointer; background: #4CAF50; color: white; }
-        button:hover { background: #45a049; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>PC Control Panel</h1>
-    <button onclick="power()">Toggle Power</button>
+    <button id="toggle-power">Toggle Power</button>
 
-    <script>
-        function power() {
-            fetch('/api/power', {
-                method: 'POST',
-                headers: { 'X-Auth': 'YOUR_SECRET_TOKEN' }
-            })
-            .then(r => r.json())
-            .then(d => alert('Power command sent'))
-            .catch(e => alert('Error: ' + e));
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
